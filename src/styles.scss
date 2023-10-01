@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,300;0,400;1,100;1,300;1,400&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Poppins:wght@300;400;500;600&family=Roboto:ital,wght@0,300;0,400;1,100;1,300;1,400&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer utilities {
+
+    /* Hide scrollbar for Chrome, Safari, Edge, and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+}
+
+
+
+//***COLORS***//
+
+$primary-color: #2E5781;
+$secondary-color: #50AF31;
+
+
+//***TYPOGRAPHY***//
+$size-one: 1.5rem;
+$size-two: 1.2rem;
+$size-three: 1rem;
+$size-four: .9rem;
+
+//***Basic styles***//
+:root {
+
+    /* Hide scrollbar for Firefox */
+    html {
+        scrollbar-width: none;
+    }
+
+
+}
+
+//***Resuable chunks***//
+
+
+@mixin nav-btn {
+
+    color: white;
+    border: 0;
+    padding: .7rem;
+    box-shadow: 0px 3px 5px rgb(142, 133, 133);
+    transition: all .3s;
+    cursor: pointer;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    font-size: $size-four;
+
+    a {
+        color: white;
+
+    }
+}
+
+@mixin auth-btn {
+
+    border: 0;
+    padding: .7rem;
+    // box-shadow: 0px 3px 5px rgb(142, 133, 133);
+    transition: all .3s;
+    cursor: pointer;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(8, 155, 184);
+    background-color: white;
+    font-size: $size-four;
+
+    a {
+        color: black;
+    }
+}
+
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+
+
+
+    .app {
+
+
+        .navegation-bar {
+
+            display: flex;
+            gap: 55px;
+            align-items: center;
+            padding-left: 2em;
+            padding-right: 2em;
+            justify-content: space-around;
+
+            .logo {
+                font-family: 'Allison';
+            }
+
+            .nav-content {
+                display: flex;
+                gap: 10px;
+                list-style: none;
+
+                li:nth-child(1) {
+                    @include nav-btn();
+                    background: #8247BE;
+                }
+
+                li:nth-child(2) {
+                    @include nav-btn();
+                    background: #ee5627;
+                }
+
+                li:nth-child(3) {
+                    @include nav-btn();
+                    background: #62A93F;
+                }
+
+                li:nth-child(4) {
+                    @include nav-btn();
+                    background: #4A5DA1;
+                }
+            }
+
+            .auth-buttons {
+                display: flex;
+                gap: 8px;
+
+                .auth-btn {
+                    @include auth-btn();
+
+                }
+            }
+
+
+        }
+
+        .footer {
+            padding: 2rem;
+            font-size: .8rem;
+            background: #312F2F;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            gap: 1rem;
+
+            .quick-links {
+                text-decoration: none;
+                list-style: none;
+
+                li {
+                    padding: .3rem;
+                }
+            }
+        }
+    }
+}

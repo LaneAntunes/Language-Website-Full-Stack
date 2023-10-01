@@ -1,0 +1,164 @@
+@mixin hide-scrollbar-ms {
+    // IE and Edge
+    -ms-overflow-style: none;
+
+    // Firefox
+    scrollbar-width: none;
+}
+
+// Define a mixin to hide scrollbars for Chrome, Safari, and Opera
+@mixin hide-scrollbar-webkit {
+    .container::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.user-progress-page {
+    // Hide scrollbars for IE, Edge, and Firefox
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    min-height: 80vh;
+
+    .page-title {
+        margin-bottom: 5%;
+        width: 100%;
+        padding: .5em;
+
+        text-align: center;
+        font-size: 1.5rem;
+        display: flex;
+        justify-content: center;
+        // background: #4A5DA1;
+
+        font-weight: 600;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    .user-progress-tables {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+        text-align: center;
+        justify-content: center;
+        padding-right: 2rem;
+        padding-left: 2rem;
+
+
+
+
+        .progress-table {
+            min-width: 40vw;
+
+
+            // border: 1px solid #5e7ce2;
+            border-radius: 15px;
+
+
+
+            .progress-level {
+                border-radius: 10px;
+                background: rgb(246, 245, 251);
+
+                padding: 1em;
+                margin: 0;
+                font-weight: 500;
+                font-size: 1rem;
+
+                // height: 100%;
+            }
+
+            .inside-table {
+
+
+                max-height: 35vh;
+                overflow: scroll;
+                @include hide-scrollbar-ms;
+
+                // Hide scrollbars for Chrome, Safari, and Opera
+                @include hide-scrollbar-webkit;
+            }
+
+        }
+
+        //TABLE//
+        .quiz-info {
+            width: 100%; // Make sure table fills the container
+
+            color: rgb(231, 226, 226);
+
+
+            tr,
+            th,
+            td {
+                background: #5e7de209;
+                font-size: .8rem;
+                padding: 10px;
+
+                .redo-btn {
+                    appearance: none;
+                    background-color: #2ea44f;
+                    border: 1px solid rgba(27, 31, 35, .15);
+                    border-radius: 6px;
+                    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+                    color: white;
+                    box-sizing: border-box;
+                    cursor: pointer;
+                    display: inline-block;
+                    font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+                    font-size: 14px;
+                    font-weight: 600;
+                    line-height: 20px;
+                    padding: 6px 16px;
+                    position: relative;
+                    text-align: center;
+                    text-decoration: none;
+                    user-select: none;
+                    -webkit-user-select: none;
+                    touch-action: manipulation;
+                    vertical-align: middle;
+                    white-space: nowrap;
+
+                    a {
+                        color: white;
+                    }
+
+
+                }
+
+                button {
+                    border: none;
+                    background: transparent;
+
+                    .erase-data-btn {
+                        color: rgb(253, 112, 18);
+                        font-size: 1.5rem;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            .progress-bar {
+                width: 100%;
+                background-color: #ddd;
+                border-radius: 5px;
+                overflow: hidden;
+
+                .progress-bar-fill {
+                    color: white;
+                    height: 20px;
+                    background-color: #5e7ce2;
+                    transition: width 0.5s;
+                }
+            }
+        }
+
+    }
+
+}

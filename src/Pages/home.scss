@@ -1,0 +1,17 @@
+@mixin containers {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.hero-section {
+    @include containers();
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    .hero-text {
+        font-size: 18px;
+        width: 50%;
+    }
+}
